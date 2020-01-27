@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
 
         <title>HTMLTableParser</title>
@@ -7,7 +7,6 @@
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/ba15e68dc1.js" crossorigin="anonymous"></script>
-
 
     </head>
 
@@ -42,10 +41,7 @@
                         </li>
                     </ul>
                     </div>
-
                   </nav>
-
-                
             </div>
             
         </div>
@@ -57,7 +53,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <button class="btn btn-lg btn-primary">Select the File</button>
+                        <label for="inputFile" class="btn btn-lg btn-primary">Select the File</label>
+                        <input class="d-none" type="file" id="inputFile" accept=".xml,.json, .csv">
                     </div>
                 </div>
 
@@ -66,11 +63,68 @@
                         <em class="text-muted">Currently Supported Formats: XML, JSON, CSV</em c>
                     </div>
                 </div>
-                
+
+                <div id="content" class="row mt-4">
+                    <div class="col-12 mb-3">
+                        <form class="form form-inline">
+                            <input class="form-control mr-2" type="checkbox" id="darkThemeInput">
+                            <label for="darkThemeInput">Dark Theme</label>
+                            <input class="form-control mr-2 ml-3" type="checkbox" id="borderedInput">
+                            <label for="borderedInput">Bordered</label>
+                            <input class="form-control mr-2 ml-3" type="checkbox" id="borderlessInput">
+                            <label for="borderlessInput">Bordless</label>
+                            
+                        </form>
+                    </div>
+                    <div class="col-12">
+
+                    </div>
+                </div>
+
                 
             </div>
         </section>
         
+
+        <div class="modal fade" id="extensionError" tabindex="-1" role="dialog" aria-labelledby="extensionModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-danger" id="extensionModalLabel">File Unsupported</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  This type of file is not supported yet.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="fileError" tabindex="-1" role="dialog" aria-labelledby="fileErrorLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title text-danger" id="fileErrorLabel">Invalid File</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    An error occured when trying to read this file.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
 
     </main>
 
